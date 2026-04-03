@@ -2,20 +2,34 @@
 
 Análisis estadísticos automatizados sobre temas económicos y sociales usando datos de fuentes oficiales colombianas (DANE, XM, Policía Nacional, Banco de la República).
 
-**Autor:** [Tu nombre]  
-**Contacto:** [Tu correo]  
-**Sitio web:** [tu-usuario.github.io/portafolio-datos-co]
+**Autor:** Efrain Martelo Gomez  
+**Contacto:** efrainmartelo@gmail.com  
+**Sitio web:** [emartelog.github.io/portafolio-datos-co]
 
 ---
 
 ## Objetivo
 
-Este repositorio construye y mantiene un portafolio profesional de análisis de datos con tres propósitos:
+Producir análisis cuantitativos de alta calidad sobre las brechas 
+socioeconómicas de Colombia — con énfasis en la región Caribe — 
+a partir de fuentes oficiales como el DANE, XM y la Policía Nacional. 
+Los análisis son automatizados, reproducibles y se actualizan 
+continuamente, generando conocimiento accionable para la toma de 
+decisiones en política pública local y regional.
 
-1. **Contratos con el Estado:** Demostrar capacidad analítica para propuestas a entidades públicas (gobernaciones, DNP, DANE, alcaldías).
-2. **Perfil docente universitario:** Evidenciar producción académica y manejo de microdatos oficiales.
-3. **Investigación en Colciencias/MinCiencias:** Base para publicación de papers en revistas indexadas.
+### Líneas de trabajo
 
+1. **Mercado laboral y brechas sociales:** Desempleo, informalidad, 
+   género y juventud desde microdatos GEIH. Insumo directo para 
+   propuestas a gobernaciones, alcaldías y el DNP.
+
+2. **Producción académica indexada:** Cada análisis es base de un 
+   paper para revistas Publindex A1/A2 (Lecturas de Economía, 
+   Sociedad y Economía, Cuadernos de Economía).
+
+3. **Capacidad instalada para el Estado:** Demostrar que el análisis 
+   automatizado de fuentes oficiales puede apoyar decisiones de 
+   política pública con metodología transparente y costo eficiente.
 ---
 
 ## Estructura del repositorio
@@ -63,8 +77,8 @@ portafolio-datos-co/
 
 ## Análisis publicados
 
-### 1. Mercado laboral en la región Caribe (2023)
-**Fuente:** DANE — GEIH 2023  
+### 1. Mercado laboral en la región Caribe (2024-2025)
+**Fuente:** DANE — GEIH 2024-2025  
 **Metodología:** Estadística descriptiva, brechas de género, regresión logística  
 **Pregunta:** ¿Qué factores determinan la probabilidad de empleo formal en la región Caribe colombiana?  
 **Estado:** 🔄 En construcción
