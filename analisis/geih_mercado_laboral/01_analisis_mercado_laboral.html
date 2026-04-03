@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Análisis de mercado laboral — GEIH – Portafolio — Ciencia de Datos Colombia</title>
+<title>Análisis de mercado laboral — GEIH – Efrain Martelo</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -74,10 +74,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-a06763021a52c43c40a351ac8b799b8f.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-80d3f14a992ee4a50988def8c27c0cb7.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Portafolio — Ciencia de Datos Colombia</span>
+    <span class="navbar-title">Efrain Martelo</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -130,14 +130,21 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Inicio</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../analisis/mercado_laboral.html"> 
-<span class="menu-text">Mercado Laboral</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-análisis" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Análisis</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-análisis">    
+        <li>
+    <a class="dropdown-item" href="../../analisis/mercado_laboral.html">
+ <span class="dropdown-text">Mercado Laboral — GEIH</span></a>
   </li>  
+    </ul>
+  </li>
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/emartelog/portafolio-datos-co"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/emartelog/portafolio-datos-co"> <i class="bi bi-github" role="img" aria-label="GitHub">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -154,7 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">Contenido</h2>
    
   <ul>
   <li><a href="#estructura" id="toc-estructura" class="nav-link active" data-scroll-target="#estructura">Estructura</a></li>
@@ -216,7 +223,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Para actualizar:</strong> carga el nuevo mes en PostgreSQL y re-ejecuta el notebook.</p>
 <div id="0d891faf" class="cell" data-execution_count="1">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. LIBRERÍAS Y CONEXIÓN</span></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
@@ -244,7 +251,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div id="28f6c8a6" class="cell" data-execution_count="14">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. CARGA ÚNICA DE DATOS</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
@@ -322,7 +329,7 @@ Departamentos: 33</code></pre>
 </div>
 <div id="c2dcd6fd" class="cell" data-execution_count="15">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. FUNCIONES CENTRALES</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
@@ -398,7 +405,7 @@ Departamentos: 33</code></pre>
 </div>
 <div id="d2ad955a" class="cell" data-execution_count="16">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. INDICADORES BÁSICOS</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
@@ -444,7 +451,7 @@ Ene  12.5  52.8  60.3</code></pre>
 </div>
 <div id="17762c1f" class="cell" data-execution_count="17">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. INFORMALIDAD</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
@@ -501,7 +508,7 @@ Atlántico               62.3</code></pre>
 </div>
 <div id="2280f428" class="cell" data-execution_count="18">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. BRECHA DE GÉNERO</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
@@ -587,7 +594,7 @@ Cesar         11.9   20.6     8.7</code></pre>
 </div>
 <div id="da599bb4" class="cell" data-execution_count="19">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. BRECHA POR EDAD</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
@@ -672,7 +679,7 @@ Sucre                     36.1                 0.7               0.0</code></pre
 </div>
 <div id="a319825b" class="cell" data-execution_count="27">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 8. COMPARATIVO INTERANUAL</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
@@ -714,7 +721,7 @@ Años disponibles: [np.int64(2024), np.int64(2025)]</code></pre>
 </div>
 <div id="d17b86ac" class="cell" data-execution_count="28">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 9. RANKING DEPARTAMENTAL</span></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
@@ -784,7 +791,7 @@ Posición región Caribe en el ranking:
 </div>
 <div id="df2a9aa6" class="cell" data-execution_count="31">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 10. REGIÓN CARIBE — ANÁLISIS COMPLETO</span></span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
@@ -854,7 +861,7 @@ Carga datos de 2023 para activar esta sección.</code></pre>
 </div>
 <div id="a1c06bee" class="cell" data-execution_count="32">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 11. SERIES DE TIEMPO Y TENDENCIA</span></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
@@ -898,7 +905,7 @@ Carga datos de 2023 para activar esta sección.</code></pre>
 </div>
 <div id="59fba465" class="cell" data-execution_count="36">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 12. GRÁFICAS</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
@@ -1042,7 +1049,7 @@ Carga datos de 2023 para activar esta sección.</code></pre>
 </div>
 <div id="65cd04ec" class="cell" data-execution_count="37">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Ver código</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 13. GUARDAR RESULTADOS</span></span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
@@ -1212,7 +1219,7 @@ Año corrido completo analizado: 2024</code></pre>
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/emartelog\.github\.io\/portafolio-datos-co\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1540,6 +1547,19 @@ Año corrido completo analizado: 2024</code></pre>
   });
   </script>
 </div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Efrain Martelo — Ciencia de Datos</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    </div>
+    <div class="nav-footer-right">
+<p>Fuente: DANE, microdatos públicos</p>
+</div>
+  </div>
+</footer>
 
 
 
