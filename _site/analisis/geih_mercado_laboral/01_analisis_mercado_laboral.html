@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.36">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Análisis de mercado laboral — GEIH – Portafolio — Ciencia de Datos Colombia</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-a0f9fd0d421825b736dc1bbcbcba2219.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Portafolio — Ciencia de Datos Colombia</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Inicio</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../analisis/mercado_laboral.html"> 
+<span class="menu-text">Mercado Laboral</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/emartelog/portafolio-datos-co"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#estructura" id="toc-estructura" class="nav-link active" data-scroll-target="#estructura">Estructura</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Análisis de mercado laboral — GEIH</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p><strong>Fuente:</strong> DANE — Gran Encuesta Integrada de Hogares<br>
+<strong>Procesamiento:</strong> Python + PostgreSQL</p>
+<hr>
+<section id="estructura" class="level3">
+<h3 class="anchored" data-anchor-id="estructura">Estructura</h3>
+<ol type="1">
+<li>Conexión y carga única<br>
+</li>
+<li>Función de filtro dinámica<br>
+</li>
+<li>Indicadores básicos (TD, TO, TGP)<br>
+</li>
+<li>Brecha de género<br>
+</li>
+<li>Informalidad<br>
+</li>
+<li>Brecha por edad<br>
+</li>
+<li>Comparativo interanual<br>
+</li>
+<li>Ranking departamental<br>
+</li>
+<li>Región Caribe — análisis completo<br>
+</li>
+<li>Series de tiempo y tendencia<br>
+</li>
+<li>Gráficas<br>
+</li>
+<li>Guardar resultados</li>
+</ol>
+<p><strong>Para actualizar:</strong> carga el nuevo mes en PostgreSQL y re-ejecuta el notebook.</p>
+<div id="0d891faf" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. LIBRERÍAS Y CONEXIÓN</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sqlalchemy <span class="im">import</span> create_engine, text</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> dotenv <span class="im">import</span> load_dotenv</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os, warnings</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>load_dotenv(<span class="st">'config/.env'</span>)</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>engine <span class="op">=</span> create_engine(</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"postgresql+psycopg2://</span><span class="sc">{</span>os<span class="sc">.</span>getenv(<span class="st">'DB_USER'</span>)<span class="sc">}</span><span class="ss">:</span><span class="sc">{</span>os<span class="sc">.</span>getenv(<span class="st">'DB_PASSWORD'</span>)<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f"@</span><span class="sc">{</span>os<span class="sc">.</span>getenv(<span class="st">'DB_HOST'</span>)<span class="sc">}</span><span class="ss">:</span><span class="sc">{</span>os<span class="sc">.</span>getenv(<span class="st">'DB_PORT'</span>)<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>os<span class="sc">.</span>getenv(<span class="st">'DB_NAME'</span>)<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> engine.<span class="ex">connect</span>() <span class="im">as</span> conn:</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    n <span class="op">=</span> conn.execute(text(<span class="st">'SELECT COUNT(*) FROM "FUERZA_DE_TRABAJO_GEIH"'</span>)).fetchone()[<span class="dv">0</span>]</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Conexión exitosa — </span><span class="sc">{</span>n<span class="sc">:,}</span><span class="ss"> registros en fuerza de trabajo'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Conexión exitosa — 711,873 registros en fuerza de trabajo</code></pre>
+</div>
+</div>
+<div id="28f6c8a6" class="cell" data-execution_count="14">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. CARGA ÚNICA DE DATOS</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Se ejecuta una sola vez. Todas las celdas siguientes</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># trabajan sobre estos DataFrames en memoria.</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Para actualizar: agrega datos en PostgreSQL y re-ejecuta.</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Fuerza de trabajo ─────────────────────────────────────</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>df_ft <span class="op">=</span> pd.read_sql(<span class="st">"""</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="st">    SELECT</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="st">        f."PER"::numeric::integer  AS anno,</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="st">        f."MES"                    AS mes,</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="st">        f."DPTO"                   AS dpto,</span></span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="st">        f."CLASE"::numeric         AS clase,</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="st">        f."FEX_C18"::numeric       AS fex,</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="st">        f."P6240"::numeric         AS p6240,</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="st">        f."P6300"::numeric         AS p6300</span></span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="st">    FROM "FUERZA_DE_TRABAJO_GEIH" f</span></span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="st">    WHERE f."PET"::numeric = 1</span></span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span>, engine)</span>
+<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Ocupados (informalidad) ───────────────────────────────</span></span>
+<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a>df_ocu <span class="op">=</span> pd.read_sql(<span class="st">"""</span></span>
+<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="st">    SELECT</span></span>
+<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a><span class="st">        o."PER"::numeric::integer  AS anno,</span></span>
+<span id="cb3-26"><a href="#cb3-26" aria-hidden="true" tabindex="-1"></a><span class="st">        o."MES"                    AS mes,</span></span>
+<span id="cb3-27"><a href="#cb3-27" aria-hidden="true" tabindex="-1"></a><span class="st">        o."DPTO"                   AS dpto,</span></span>
+<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="st">        o."FEX_C18"::numeric       AS fex,</span></span>
+<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="st">        o."P6920"::numeric         AS cotiza_pension,</span></span>
+<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a><span class="st">        o."P6430"::numeric         AS posicion_ocu</span></span>
+<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="st">    FROM "OCUPADOS_GEIH" o</span></span>
+<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a><span class="st">"""</span>, engine)</span>
+<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Construir condición de actividad ─────────────────────</span></span>
+<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> asignar_condicion(p):</span>
+<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> p <span class="kw">in</span> [<span class="fl">1.0</span>, <span class="fl">2.0</span>]: <span class="cf">return</span> <span class="st">'Ocupado'</span></span>
+<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> p <span class="op">==</span> <span class="fl">3.0</span>:        <span class="cf">return</span> <span class="st">'Desocupado'</span></span>
+<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> p <span class="kw">in</span> [<span class="fl">4.0</span>, <span class="fl">5.0</span>, <span class="fl">6.0</span>]: <span class="cf">return</span> <span class="st">'Inactivo'</span></span>
+<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>df_ft[<span class="st">'condicion'</span>] <span class="op">=</span> df_ft[<span class="st">'p6240'</span>].<span class="bu">map</span>(asignar_condicion)</span>
+<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>df_ft <span class="op">=</span> df_ft.dropna(subset<span class="op">=</span>[<span class="st">'condicion'</span>])</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Período como fecha ────────────────────────────────────</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>df_ft[<span class="st">'periodo'</span>] <span class="op">=</span> pd.to_datetime(</span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    df_ft[<span class="st">'anno'</span>].astype(<span class="bu">str</span>) <span class="op">+</span> <span class="st">'-'</span> <span class="op">+</span> df_ft[<span class="st">'mes'</span>] <span class="op">+</span> <span class="st">'-01'</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>df_ocu[<span class="st">'periodo'</span>] <span class="op">=</span> pd.to_datetime(</span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>    df_ocu[<span class="st">'anno'</span>].astype(<span class="bu">str</span>) <span class="op">+</span> <span class="st">'-'</span> <span class="op">+</span> df_ocu[<span class="st">'mes'</span>] <span class="op">+</span> <span class="st">'-01'</span></span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Informal en ocupados ──────────────────────────────────</span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>df_ocu[<span class="st">'informal'</span>] <span class="op">=</span> (df_ocu[<span class="st">'cotiza_pension'</span>] <span class="op">!=</span> <span class="fl">1.0</span>).astype(<span class="bu">int</span>)</span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Detectar cobertura disponible ────────────────────────</span></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>ultimo_anno  <span class="op">=</span> <span class="bu">int</span>(df_ft[<span class="st">'anno'</span>].<span class="bu">max</span>())</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>ultimo_mes   <span class="op">=</span> df_ft[df_ft[<span class="st">'anno'</span>] <span class="op">==</span> ultimo_anno][<span class="st">'mes'</span>].<span class="bu">max</span>()</span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>anno_anterior <span class="op">=</span> anno_completo  <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>anno_completo <span class="op">=</span> <span class="bu">int</span>(</span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>    df_ft.groupby(<span class="st">'anno'</span>)[<span class="st">'mes'</span>].nunique()</span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>    .pipe(<span class="kw">lambda</span> s: s[s <span class="op">==</span> <span class="dv">12</span>]).index.<span class="bu">max</span>()</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Cobertura: </span><span class="sc">{</span>df_ft[<span class="st">"periodo"</span>]<span class="sc">.</span><span class="bu">min</span>()<span class="sc">.</span>strftime(<span class="st">"%b %Y"</span>)<span class="sc">}</span><span class="ss"> → </span><span class="sc">{</span>df_ft[<span class="st">"periodo"</span>]<span class="sc">.</span><span class="bu">max</span>()<span class="sc">.</span>strftime(<span class="st">"%b %Y"</span>)<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Año corrido completo disponible: </span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Último mes disponible: </span><span class="sc">{</span>ultimo_mes<span class="sc">}</span><span class="ss">/</span><span class="sc">{</span>ultimo_anno<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Departamentos: </span><span class="sc">{</span>df_ft[<span class="st">"dpto"</span>]<span class="sc">.</span>nunique()<span class="sc">}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Cobertura: Jan 2024 → Jan 2025
+Año corrido completo disponible: 2024
+Último mes disponible: 01/2025
+Departamentos: 33</code></pre>
+</div>
+</div>
+<div id="c2dcd6fd" class="cell" data-execution_count="15">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 3. FUNCIONES CENTRALES</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>MESES_NOMBRES <span class="op">=</span> {</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'01'</span>:<span class="st">'Ene'</span>,<span class="st">'02'</span>:<span class="st">'Feb'</span>,<span class="st">'03'</span>:<span class="st">'Mar'</span>,<span class="st">'04'</span>:<span class="st">'Abr'</span>,</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    <span class="st">'05'</span>:<span class="st">'May'</span>,<span class="st">'06'</span>:<span class="st">'Jun'</span>,<span class="st">'07'</span>:<span class="st">'Jul'</span>,<span class="st">'08'</span>:<span class="st">'Ago'</span>,</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    <span class="st">'09'</span>:<span class="st">'Sep'</span>,<span class="st">'10'</span>:<span class="st">'Oct'</span>,<span class="st">'11'</span>:<span class="st">'Nov'</span>,<span class="st">'12'</span>:<span class="st">'Dic'</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>DPTOS_CARIBE <span class="op">=</span> [<span class="st">'08'</span>,<span class="st">'13'</span>,<span class="st">'20'</span>,<span class="st">'23'</span>,<span class="st">'44'</span>,<span class="st">'47'</span>,<span class="st">'70'</span>]</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>NOMBRES_DPTOS <span class="op">=</span> {</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="st">'05'</span>:<span class="st">'Antioquia'</span>,<span class="st">'08'</span>:<span class="st">'Atlántico'</span>,<span class="st">'11'</span>:<span class="st">'Bogotá'</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    <span class="st">'13'</span>:<span class="st">'Bolívar'</span>,<span class="st">'15'</span>:<span class="st">'Boyacá'</span>,<span class="st">'17'</span>:<span class="st">'Caldas'</span>,</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="st">'18'</span>:<span class="st">'Caquetá'</span>,<span class="st">'19'</span>:<span class="st">'Cauca'</span>,<span class="st">'20'</span>:<span class="st">'Cesar'</span>,</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="st">'23'</span>:<span class="st">'Córdoba'</span>,<span class="st">'25'</span>:<span class="st">'Cundinamarca'</span>,<span class="st">'27'</span>:<span class="st">'Chocó'</span>,</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>    <span class="st">'41'</span>:<span class="st">'Huila'</span>,<span class="st">'44'</span>:<span class="st">'La Guajira'</span>,<span class="st">'47'</span>:<span class="st">'Magdalena'</span>,</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>    <span class="st">'50'</span>:<span class="st">'Meta'</span>,<span class="st">'52'</span>:<span class="st">'Nariño'</span>,<span class="st">'54'</span>:<span class="st">'N. Santander'</span>,</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>    <span class="st">'63'</span>:<span class="st">'Quindío'</span>,<span class="st">'66'</span>:<span class="st">'Risaralda'</span>,<span class="st">'68'</span>:<span class="st">'Santander'</span>,</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a>    <span class="st">'70'</span>:<span class="st">'Sucre'</span>,<span class="st">'73'</span>:<span class="st">'Tolima'</span>,<span class="st">'76'</span>:<span class="st">'Valle del Cauca'</span>,</span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>    <span class="st">'81'</span>:<span class="st">'Arauca'</span>,<span class="st">'85'</span>:<span class="st">'Casanare'</span>,<span class="st">'86'</span>:<span class="st">'Putumayo'</span>,</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>    <span class="st">'88'</span>:<span class="st">'San Andrés'</span>,<span class="st">'91'</span>:<span class="st">'Amazonas'</span>,<span class="st">'94'</span>:<span class="st">'Guainía'</span>,</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a>    <span class="st">'95'</span>:<span class="st">'Guaviare'</span>,<span class="st">'97'</span>:<span class="st">'Vaupés'</span>,<span class="st">'99'</span>:<span class="st">'Vichada'</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> filtrar(df, anno<span class="op">=</span><span class="va">None</span>, mes<span class="op">=</span><span class="va">None</span>, mes_fin<span class="op">=</span><span class="va">None</span>,</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>            dptos<span class="op">=</span><span class="va">None</span>, solo_cabecera<span class="op">=</span><span class="va">False</span>):</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a><span class="co">    Filtra el DataFrame base.</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a><span class="co">    Ejemplos:</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a><span class="co">      filtrar(df, anno=2024)                    # año corrido 2024</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a><span class="co">      filtrar(df, anno=2025, mes_fin='03')      # ene-mar 2025</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a><span class="co">      filtrar(df, anno=[2024,2025], mes='01')   # solo eneros</span></span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a><span class="co">      filtrar(df, dptos=['13'])                 # Bolívar</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>    d <span class="op">=</span> df.copy()</span>
+<span id="cb5-36"><a href="#cb5-36" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> anno <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb5-37"><a href="#cb5-37" aria-hidden="true" tabindex="-1"></a>        d <span class="op">=</span> d[d[<span class="st">'anno'</span>].isin([anno] <span class="cf">if</span> <span class="kw">not</span> <span class="bu">isinstance</span>(anno, <span class="bu">list</span>) <span class="cf">else</span> anno)]</span>
+<span id="cb5-38"><a href="#cb5-38" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> mes <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb5-39"><a href="#cb5-39" aria-hidden="true" tabindex="-1"></a>        d <span class="op">=</span> d[d[<span class="st">'mes'</span>].isin([mes] <span class="cf">if</span> <span class="kw">not</span> <span class="bu">isinstance</span>(mes, <span class="bu">list</span>) <span class="cf">else</span> mes)]</span>
+<span id="cb5-40"><a href="#cb5-40" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> mes_fin <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb5-41"><a href="#cb5-41" aria-hidden="true" tabindex="-1"></a>        d <span class="op">=</span> d[d[<span class="st">'mes'</span>] <span class="op">&lt;=</span> mes_fin]</span>
+<span id="cb5-42"><a href="#cb5-42" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> dptos <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span>:</span>
+<span id="cb5-43"><a href="#cb5-43" aria-hidden="true" tabindex="-1"></a>        d <span class="op">=</span> d[d[<span class="st">'dpto'</span>].isin(dptos)]</span>
+<span id="cb5-44"><a href="#cb5-44" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> solo_cabecera:</span>
+<span id="cb5-45"><a href="#cb5-45" aria-hidden="true" tabindex="-1"></a>        d <span class="op">=</span> d[d[<span class="st">'clase'</span>] <span class="op">==</span> <span class="fl">1.0</span>]</span>
+<span id="cb5-46"><a href="#cb5-46" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> d</span>
+<span id="cb5-47"><a href="#cb5-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-48"><a href="#cb5-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-49"><a href="#cb5-49" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> indicadores(df, agrupar_por):</span>
+<span id="cb5-50"><a href="#cb5-50" aria-hidden="true" tabindex="-1"></a>    <span class="co">"""</span></span>
+<span id="cb5-51"><a href="#cb5-51" aria-hidden="true" tabindex="-1"></a><span class="co">    Calcula TD, TO, TGP sobre un DataFrame ya filtrado.</span></span>
+<span id="cb5-52"><a href="#cb5-52" aria-hidden="true" tabindex="-1"></a><span class="co">    """</span></span>
+<span id="cb5-53"><a href="#cb5-53" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="bu">isinstance</span>(agrupar_por, <span class="bu">str</span>):</span>
+<span id="cb5-54"><a href="#cb5-54" aria-hidden="true" tabindex="-1"></a>        agrupar_por <span class="op">=</span> [agrupar_por]</span>
+<span id="cb5-55"><a href="#cb5-55" aria-hidden="true" tabindex="-1"></a>    g <span class="op">=</span> df.groupby(agrupar_por <span class="op">+</span> [<span class="st">'condicion'</span>])[<span class="st">'fex'</span>].<span class="bu">sum</span>().unstack(fill_value<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb5-56"><a href="#cb5-56" aria-hidden="true" tabindex="-1"></a>    ocu <span class="op">=</span> g.get(<span class="st">'Ocupado'</span>,    <span class="dv">0</span>)</span>
+<span id="cb5-57"><a href="#cb5-57" aria-hidden="true" tabindex="-1"></a>    des <span class="op">=</span> g.get(<span class="st">'Desocupado'</span>, <span class="dv">0</span>)</span>
+<span id="cb5-58"><a href="#cb5-58" aria-hidden="true" tabindex="-1"></a>    ina <span class="op">=</span> g.get(<span class="st">'Inactivo'</span>,   <span class="dv">0</span>)</span>
+<span id="cb5-59"><a href="#cb5-59" aria-hidden="true" tabindex="-1"></a>    pea <span class="op">=</span> ocu <span class="op">+</span> des</span>
+<span id="cb5-60"><a href="#cb5-60" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> pd.DataFrame({</span>
+<span id="cb5-61"><a href="#cb5-61" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Ocupados_M'</span>: (ocu <span class="op">/</span> <span class="fl">1e6</span>).<span class="bu">round</span>(<span class="dv">2</span>),</span>
+<span id="cb5-62"><a href="#cb5-62" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Desocup_M'</span>:  (des <span class="op">/</span> <span class="fl">1e6</span>).<span class="bu">round</span>(<span class="dv">2</span>),</span>
+<span id="cb5-63"><a href="#cb5-63" aria-hidden="true" tabindex="-1"></a>        <span class="st">'TD'</span>:  (des <span class="op">/</span> pea <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>),</span>
+<span id="cb5-64"><a href="#cb5-64" aria-hidden="true" tabindex="-1"></a>        <span class="st">'TO'</span>:  (ocu <span class="op">/</span> (pea <span class="op">+</span> ina) <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>),</span>
+<span id="cb5-65"><a href="#cb5-65" aria-hidden="true" tabindex="-1"></a>        <span class="st">'TGP'</span>: (pea <span class="op">/</span> (pea <span class="op">+</span> ina) <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>),</span>
+<span id="cb5-66"><a href="#cb5-66" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb5-67"><a href="#cb5-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-68"><a href="#cb5-68" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Funciones listas: filtrar(), indicadores()'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Funciones listas: filtrar(), indicadores()</code></pre>
+</div>
+</div>
+<div id="d2ad955a" class="cell" data-execution_count="16">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 4. INDICADORES BÁSICOS</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Año corrido completo ──────────────────────────────────</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>ind_nac <span class="op">=</span> indicadores(filtrar(df_ft, anno<span class="op">=</span>anno_completo), <span class="st">'mes'</span>)</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>ind_nac.index <span class="op">=</span> ind_nac.index.<span class="bu">map</span>(MESES_NOMBRES)</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Indicadores nacionales — año corrido </span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ind_nac[[<span class="st">'TD'</span>,<span class="st">'TO'</span>,<span class="st">'TGP'</span>]].to_string())</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="ch">\n</span><span class="ss">Promedio </span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">:  TD=</span><span class="sc">{</span>ind_nac[<span class="st">"TD"</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss">%  TO=</span><span class="sc">{</span>ind_nac[<span class="st">"TO"</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss">%  TGP=</span><span class="sc">{</span>ind_nac[<span class="st">"TGP"</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss">%'</span>)</span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a><span class="co"># ── Acumulado año en curso (si difiere del completo) ──────</span></span>
+<span id="cb7-13"><a href="#cb7-13" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> ultimo_anno <span class="op">!=</span> anno_completo:</span>
+<span id="cb7-14"><a href="#cb7-14" aria-hidden="true" tabindex="-1"></a>    ind_acum <span class="op">=</span> indicadores(filtrar(df_ft, anno<span class="op">=</span>ultimo_anno), <span class="st">'mes'</span>)</span>
+<span id="cb7-15"><a href="#cb7-15" aria-hidden="true" tabindex="-1"></a>    ind_acum.index <span class="op">=</span> ind_acum.index.<span class="bu">map</span>(MESES_NOMBRES)</span>
+<span id="cb7-16"><a href="#cb7-16" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="ch">\n</span><span class="ss">Acumulado </span><span class="sc">{</span>ultimo_anno<span class="sc">}</span><span class="ss"> (hasta </span><span class="sc">{</span>MESES_NOMBRES<span class="sc">.</span>get(ultimo_mes)<span class="sc">}</span><span class="ss">)'</span>)</span>
+<span id="cb7-17"><a href="#cb7-17" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(ind_acum[[<span class="st">'TD'</span>,<span class="st">'TO'</span>,<span class="st">'TGP'</span>]].to_string())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Indicadores nacionales — año corrido 2024
+       TD    TO   TGP
+mes                  
+Ene  12.1  52.3  59.5
+Feb  14.4  54.0  63.1
+Mar  15.1  52.2  61.5
+Abr  15.6  53.9  63.9
+May  15.0  54.4  64.0
+Jun  14.5  53.7  62.8
+Jul  14.5  54.3  63.5
+Ago  15.4  55.0  64.9
+Sep  16.4  54.2  64.8
+Oct  15.2  54.6  64.4
+Nov  15.8  54.8  65.1
+Dic  12.5  54.3  62.1
+
+Promedio 2024:  TD=14.7%  TO=54.0%  TGP=63.3%
+
+Acumulado 2025 (hasta Ene)
+       TD    TO   TGP
+mes                  
+Ene  12.5  52.8  60.3</code></pre>
+</div>
+</div>
+<div id="17762c1f" class="cell" data-execution_count="17">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 5. INFORMALIDAD</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Definición DANE: informal = no cotiza a pensión (P6920 != 1)</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>df_inf_ac <span class="op">=</span> filtrar(df_ocu, anno<span class="op">=</span>anno_completo)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Nacional por mes</span></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>tasa_inf_nac <span class="op">=</span> df_inf_ac.groupby(<span class="st">'mes'</span>).<span class="bu">apply</span>(</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> x: (x[x[<span class="st">'informal'</span>]<span class="op">==</span><span class="dv">1</span>][<span class="st">'fex'</span>].<span class="bu">sum</span>() <span class="op">/</span> x[<span class="st">'fex'</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>tasa_inf_nac.index <span class="op">=</span> tasa_inf_nac.index.<span class="bu">map</span>(MESES_NOMBRES)</span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Informalidad nacional — </span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tasa_inf_nac.to_frame(<span class="st">'Informalidad (%)'</span>).to_string())</span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Promedio: </span><span class="sc">{</span>tasa_inf_nac<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss">%'</span>)</span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Región Caribe</span></span>
+<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a>df_inf_caribe <span class="op">=</span> filtrar(df_ocu, anno<span class="op">=</span>anno_completo, dptos<span class="op">=</span>DPTOS_CARIBE)</span>
+<span id="cb9-19"><a href="#cb9-19" aria-hidden="true" tabindex="-1"></a>tasa_inf_caribe <span class="op">=</span> df_inf_caribe.groupby(<span class="st">'dpto'</span>).<span class="bu">apply</span>(</span>
+<span id="cb9-20"><a href="#cb9-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">lambda</span> x: (x[x[<span class="st">'informal'</span>]<span class="op">==</span><span class="dv">1</span>][<span class="st">'fex'</span>].<span class="bu">sum</span>() <span class="op">/</span> x[<span class="st">'fex'</span>].<span class="bu">sum</span>() <span class="op">*</span> <span class="dv">100</span>)</span>
+<span id="cb9-21"><a href="#cb9-21" aria-hidden="true" tabindex="-1"></a>).<span class="bu">round</span>(<span class="dv">1</span>).rename(index<span class="op">=</span>NOMBRES_DPTOS).sort_values(ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb9-22"><a href="#cb9-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="ch">\n</span><span class="ss">Informalidad región Caribe — </span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb9-23"><a href="#cb9-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(tasa_inf_caribe.to_frame(<span class="st">'Informalidad (%)'</span>).to_string())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Informalidad nacional — 2024
+     Informalidad (%)
+mes                  
+Ene              57.0
+Feb              58.3
+Mar              57.2
+Abr              57.2
+May              56.4
+Jun              57.0
+Jul              57.1
+Ago              57.0
+Sep              56.8
+Oct              56.5
+Nov              56.3
+Dic              58.0
+Promedio: 57.1%
+
+Informalidad región Caribe — 2024
+            Informalidad (%)
+dpto                        
+Sucre                   82.7
+Córdoba                 81.6
+La Guajira              81.2
+Magdalena               75.5
+Cesar                   72.9
+Bolívar                 70.3
+Atlántico               62.3</code></pre>
+</div>
+</div>
+<div id="2280f428" class="cell" data-execution_count="18">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 6. BRECHA DE GÉNERO</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Requiere cruce FT + Características Generales por</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="co"># DIRECTORIO + SECUENCIA_P + ORDEN + MES + PER</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>df_genero <span class="op">=</span> pd.read_sql(<span class="ss">f"""</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="ss">    SELECT</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="ss">        f."MES" AS mes, f."DPTO" AS dpto,</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="ss">        f."FEX_C18"::numeric AS fex,</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="ss">        c."P6016"::numeric AS sexo,</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="ss">        CASE</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="ss">            WHEN f."P6240"::numeric IN (1.0,2.0) THEN 'Ocupado'</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="ss">            WHEN f."P6240"::numeric = 3.0         THEN 'Desocupado'</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="ss">            WHEN f."P6240"::numeric IN (4.0,5.0,6.0) THEN 'Inactivo'</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="ss">        END AS condicion</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="ss">    FROM "FUERZA_DE_TRABAJO_GEIH" f</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="ss">    JOIN "GEIH_CARACTERISTICAS_GENERALES" c</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="ss">      ON  f."DIRECTORIO"  = c."DIRECTORIO"</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="ss">      AND f."SECUENCIA_P" = c."SECUENCIA_P"</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="ss">      AND f."ORDEN"       = c."ORDEN"</span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="ss">      AND f."MES"         = c."MES"</span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="ss">      AND f."PER"         = c."PER"</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="ss">    WHERE f."PET"::numeric = 1</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a><span class="ss">    AND   f."PER"::numeric = </span><span class="sc">{</span>anno_completo<span class="sc">}</span></span>
+<span id="cb11-26"><a href="#cb11-26" aria-hidden="true" tabindex="-1"></a><span class="ss">"""</span>, engine)</span>
+<span id="cb11-27"><a href="#cb11-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a>df_genero <span class="op">=</span> df_genero.dropna(subset<span class="op">=</span>[<span class="st">'condicion'</span>,<span class="st">'sexo'</span>])</span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a>df_genero[<span class="st">'sexo_label'</span>] <span class="op">=</span> df_genero[<span class="st">'sexo'</span>].<span class="bu">map</span>({<span class="fl">1.0</span>:<span class="st">'Hombre'</span>, <span class="fl">2.0</span>:<span class="st">'Mujer'</span>})</span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a><span class="co"># TD por sexo y mes</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> df_genero.groupby([<span class="st">'mes'</span>,<span class="st">'sexo_label'</span>,<span class="st">'condicion'</span>])[<span class="st">'fex'</span>].<span class="bu">sum</span>().unstack(fill_value<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a>g[<span class="st">'PEA'</span>] <span class="op">=</span> g.get(<span class="st">'Ocupado'</span>,<span class="dv">0</span>) <span class="op">+</span> g.get(<span class="st">'Desocupado'</span>,<span class="dv">0</span>)</span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a>g[<span class="st">'TD'</span>]  <span class="op">=</span> (g.get(<span class="st">'Desocupado'</span>,<span class="dv">0</span>) <span class="op">/</span> g[<span class="st">'PEA'</span>] <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>td_g <span class="op">=</span> g[<span class="st">'TD'</span>].unstack(<span class="st">'sexo_label'</span>)</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>td_g.index <span class="op">=</span> td_g.index.<span class="bu">map</span>(MESES_NOMBRES)</span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>td_g[<span class="st">'Brecha'</span>] <span class="op">=</span> (td_g[<span class="st">'Mujer'</span>] <span class="op">-</span> td_g[<span class="st">'Hombre'</span>]).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Brecha de género en TD — </span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(td_g.to_string())</span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="ch">\n</span><span class="ss">Brecha promedio: </span><span class="sc">{</span>td_g[<span class="st">"Brecha"</span>]<span class="sc">.</span>mean()<span class="sc">:.1f}</span><span class="ss"> pp'</span>)</span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a><span class="co"># Por región Caribe</span></span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>df_g_caribe <span class="op">=</span> df_genero[df_genero[<span class="st">'dpto'</span>].isin(DPTOS_CARIBE)].copy()</span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>g2 <span class="op">=</span> df_g_caribe.groupby([<span class="st">'dpto'</span>,<span class="st">'sexo_label'</span>,<span class="st">'condicion'</span>])[<span class="st">'fex'</span>].<span class="bu">sum</span>().unstack(fill_value<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a>g2[<span class="st">'PEA'</span>] <span class="op">=</span> g2.get(<span class="st">'Ocupado'</span>,<span class="dv">0</span>) <span class="op">+</span> g2.get(<span class="st">'Desocupado'</span>,<span class="dv">0</span>)</span>
+<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a>g2[<span class="st">'TD'</span>]  <span class="op">=</span> (g2.get(<span class="st">'Desocupado'</span>,<span class="dv">0</span>) <span class="op">/</span> g2[<span class="st">'PEA'</span>] <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a>td_g2 <span class="op">=</span> g2[<span class="st">'TD'</span>].unstack(<span class="st">'sexo_label'</span>).rename(index<span class="op">=</span>NOMBRES_DPTOS)</span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a>td_g2[<span class="st">'Brecha'</span>] <span class="op">=</span> (td_g2[<span class="st">'Mujer'</span>] <span class="op">-</span> td_g2[<span class="st">'Hombre'</span>]).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="ch">\n</span><span class="ss">Brecha de género Caribe — </span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(td_g2.sort_values(<span class="st">'Brecha'</span>, ascending<span class="op">=</span><span class="va">False</span>).to_string())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Brecha de género en TD — 2024
+sexo_label  Hombre  Mujer  Brecha
+mes                              
+Ene            3.9   11.3     7.4
+Feb            5.4   14.4     9.0
+Mar            5.3   15.1     9.8
+Abr            5.7   15.7    10.0
+May            5.2   15.4    10.2
+Jun            4.9   14.1     9.2
+Jul            5.1   14.4     9.3
+Ago            5.2   16.2    11.0
+Sep            6.0   16.7    10.7
+Oct            5.5   15.3     9.8
+Nov            6.1   15.3     9.2
+Dic            4.5   12.4     7.9
+
+Brecha promedio: 9.5 pp
+
+Brecha de género Caribe — 2024
+sexo_label  Hombre  Mujer  Brecha
+dpto                             
+Sucre          1.2   14.7    13.5
+Bolívar        3.9   16.2    12.3
+Córdoba        5.1   16.8    11.7
+La Guajira     5.3   17.0    11.7
+Magdalena      5.1   15.6    10.5
+Atlántico      3.9   14.1    10.2
+Cesar         11.9   20.6     8.7</code></pre>
+</div>
+</div>
+<div id="da599bb4" class="cell" data-execution_count="19">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 7. BRECHA POR EDAD</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>df_edad <span class="op">=</span> pd.read_sql(<span class="ss">f"""</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="ss">    SELECT</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="ss">        f."MES" AS mes, f."DPTO" AS dpto,</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="ss">        f."FEX_C18"::numeric AS fex,</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a><span class="ss">        c."P6040"::numeric AS edad,</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="ss">        CASE</span></span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a><span class="ss">            WHEN f."P6240"::numeric IN (1.0,2.0) THEN 'Ocupado'</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a><span class="ss">            WHEN f."P6240"::numeric = 3.0         THEN 'Desocupado'</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a><span class="ss">            WHEN f."P6240"::numeric IN (4.0,5.0,6.0) THEN 'Inactivo'</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a><span class="ss">        END AS condicion</span></span>
+<span id="cb13-15"><a href="#cb13-15" aria-hidden="true" tabindex="-1"></a><span class="ss">    FROM "FUERZA_DE_TRABAJO_GEIH" f</span></span>
+<span id="cb13-16"><a href="#cb13-16" aria-hidden="true" tabindex="-1"></a><span class="ss">    JOIN "GEIH_CARACTERISTICAS_GENERALES" c</span></span>
+<span id="cb13-17"><a href="#cb13-17" aria-hidden="true" tabindex="-1"></a><span class="ss">      ON  f."DIRECTORIO"  = c."DIRECTORIO"</span></span>
+<span id="cb13-18"><a href="#cb13-18" aria-hidden="true" tabindex="-1"></a><span class="ss">      AND f."SECUENCIA_P" = c."SECUENCIA_P"</span></span>
+<span id="cb13-19"><a href="#cb13-19" aria-hidden="true" tabindex="-1"></a><span class="ss">      AND f."ORDEN"       = c."ORDEN"</span></span>
+<span id="cb13-20"><a href="#cb13-20" aria-hidden="true" tabindex="-1"></a><span class="ss">      AND f."MES"         = c."MES"</span></span>
+<span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="ss">      AND f."PER"         = c."PER"</span></span>
+<span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a><span class="ss">    WHERE f."PET"::numeric = 1</span></span>
+<span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a><span class="ss">    AND   f."PER"::numeric = </span><span class="sc">{</span>anno_completo<span class="sc">}</span></span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a><span class="ss">"""</span>, engine)</span>
+<span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a>df_edad <span class="op">=</span> df_edad.dropna(subset<span class="op">=</span>[<span class="st">'condicion'</span>,<span class="st">'edad'</span>])</span>
+<span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-28"><a href="#cb13-28" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> grupo_etario(e):</span>
+<span id="cb13-29"><a href="#cb13-29" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="dv">18</span> <span class="op">&lt;=</span> e <span class="op">&lt;=</span> <span class="dv">28</span>: <span class="cf">return</span> <span class="st">'1. Jóvenes (18-28)'</span></span>
+<span id="cb13-30"><a href="#cb13-30" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="dv">29</span> <span class="op">&lt;=</span> e <span class="op">&lt;=</span> <span class="dv">54</span>: <span class="cf">return</span> <span class="st">'2. Adultos (29-54)'</span></span>
+<span id="cb13-31"><a href="#cb13-31" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> e <span class="op">&gt;=</span> <span class="dv">55</span>:       <span class="cf">return</span> <span class="st">'3. Mayores (55+)'</span></span>
+<span id="cb13-32"><a href="#cb13-32" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="va">None</span></span>
+<span id="cb13-33"><a href="#cb13-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-34"><a href="#cb13-34" aria-hidden="true" tabindex="-1"></a>df_edad[<span class="st">'grupo'</span>] <span class="op">=</span> df_edad[<span class="st">'edad'</span>].<span class="bu">map</span>(grupo_etario)</span>
+<span id="cb13-35"><a href="#cb13-35" aria-hidden="true" tabindex="-1"></a>df_edad <span class="op">=</span> df_edad.dropna(subset<span class="op">=</span>[<span class="st">'grupo'</span>])</span>
+<span id="cb13-36"><a href="#cb13-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-37"><a href="#cb13-37" aria-hidden="true" tabindex="-1"></a><span class="co"># Nacional por grupo</span></span>
+<span id="cb13-38"><a href="#cb13-38" aria-hidden="true" tabindex="-1"></a>g <span class="op">=</span> df_edad.groupby([<span class="st">'grupo'</span>,<span class="st">'condicion'</span>])[<span class="st">'fex'</span>].<span class="bu">sum</span>().unstack(fill_value<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb13-39"><a href="#cb13-39" aria-hidden="true" tabindex="-1"></a>g[<span class="st">'PEA'</span>] <span class="op">=</span> g.get(<span class="st">'Ocupado'</span>,<span class="dv">0</span>) <span class="op">+</span> g.get(<span class="st">'Desocupado'</span>,<span class="dv">0</span>)</span>
+<span id="cb13-40"><a href="#cb13-40" aria-hidden="true" tabindex="-1"></a>g[<span class="st">'TD'</span>]  <span class="op">=</span> (g.get(<span class="st">'Desocupado'</span>,<span class="dv">0</span>) <span class="op">/</span> g[<span class="st">'PEA'</span>] <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb13-41"><a href="#cb13-41" aria-hidden="true" tabindex="-1"></a>g[<span class="st">'TGP'</span>] <span class="op">=</span> (g[<span class="st">'PEA'</span>] <span class="op">/</span> (g[<span class="st">'PEA'</span>] <span class="op">+</span> g.get(<span class="st">'Inactivo'</span>,<span class="dv">0</span>)) <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb13-42"><a href="#cb13-42" aria-hidden="true" tabindex="-1"></a>g[<span class="st">'TO'</span>]  <span class="op">=</span> (g.get(<span class="st">'Ocupado'</span>,<span class="dv">0</span>) <span class="op">/</span> (g[<span class="st">'PEA'</span>] <span class="op">+</span> g.get(<span class="st">'Inactivo'</span>,<span class="dv">0</span>)) <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb13-43"><a href="#cb13-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-44"><a href="#cb13-44" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Indicadores por grupo etario — </span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb13-45"><a href="#cb13-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(g[[<span class="st">'TD'</span>,<span class="st">'TO'</span>,<span class="st">'TGP'</span>]].to_string())</span>
+<span id="cb13-46"><a href="#cb13-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-47"><a href="#cb13-47" aria-hidden="true" tabindex="-1"></a>brecha_edad <span class="op">=</span> (g.loc[<span class="st">'1. Jóvenes (18-28)'</span>,<span class="st">'TD'</span>] <span class="op">-</span> g.loc[<span class="st">'2. Adultos (29-54)'</span>,<span class="st">'TD'</span>]).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb13-48"><a href="#cb13-48" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="ch">\n</span><span class="ss">Brecha jóvenes vs adultos: </span><span class="sc">{</span>brecha_edad<span class="sc">:+.1f}</span><span class="ss"> pp'</span>)</span>
+<span id="cb13-49"><a href="#cb13-49" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'(positivo = jóvenes tienen más desempleo que adultos)'</span>)</span>
+<span id="cb13-50"><a href="#cb13-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-51"><a href="#cb13-51" aria-hidden="true" tabindex="-1"></a><span class="co"># Caribe por grupo</span></span>
+<span id="cb13-52"><a href="#cb13-52" aria-hidden="true" tabindex="-1"></a>g_c <span class="op">=</span> df_edad[df_edad[<span class="st">'dpto'</span>].isin(DPTOS_CARIBE)].groupby([<span class="st">'dpto'</span>,<span class="st">'grupo'</span>,<span class="st">'condicion'</span>])[<span class="st">'fex'</span>].<span class="bu">sum</span>().unstack(fill_value<span class="op">=</span><span class="dv">0</span>)</span>
+<span id="cb13-53"><a href="#cb13-53" aria-hidden="true" tabindex="-1"></a>g_c[<span class="st">'PEA'</span>] <span class="op">=</span> g_c.get(<span class="st">'Ocupado'</span>,<span class="dv">0</span>) <span class="op">+</span> g_c.get(<span class="st">'Desocupado'</span>,<span class="dv">0</span>)</span>
+<span id="cb13-54"><a href="#cb13-54" aria-hidden="true" tabindex="-1"></a>g_c[<span class="st">'TD'</span>]  <span class="op">=</span> (g_c.get(<span class="st">'Desocupado'</span>,<span class="dv">0</span>) <span class="op">/</span> g_c[<span class="st">'PEA'</span>] <span class="op">*</span> <span class="dv">100</span>).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb13-55"><a href="#cb13-55" aria-hidden="true" tabindex="-1"></a>td_edad_caribe <span class="op">=</span> g_c[<span class="st">'TD'</span>].unstack(<span class="st">'grupo'</span>)</span>
+<span id="cb13-56"><a href="#cb13-56" aria-hidden="true" tabindex="-1"></a>td_edad_caribe.index <span class="op">=</span> td_edad_caribe.index.<span class="bu">map</span>(NOMBRES_DPTOS)</span>
+<span id="cb13-57"><a href="#cb13-57" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="ch">\n</span><span class="ss">TD por grupo etario — región Caribe </span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb13-58"><a href="#cb13-58" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(td_edad_caribe.to_string())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Indicadores por grupo etario — 2024
+condicion             TD    TO   TGP
+grupo                               
+1. Jóvenes (18-28)  25.4  55.8  74.8
+2. Adultos (29-54)   0.8  71.3  71.9
+3. Mayores (55+)     0.2  34.2  34.3
+
+Brecha jóvenes vs adultos: +24.6 pp
+(positivo = jóvenes tienen más desempleo que adultos)
+
+TD por grupo etario — región Caribe 2024
+grupo       1. Jóvenes (18-28)  2. Adultos (29-54)  3. Mayores (55+)
+dpto                                                                
+Atlántico                 33.9                 0.7               0.0
+Bolívar                   32.8                 0.6               0.2
+Cesar                     30.2                 1.1               0.0
+Córdoba                   27.2                 0.5               0.0
+La Guajira                27.8                 0.7               0.0
+Magdalena                 29.1                 0.8               0.1
+Sucre                     36.1                 0.7               0.0</code></pre>
+</div>
+</div>
+<div id="a319825b" class="cell" data-execution_count="27">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 8. COMPARATIVO INTERANUAL</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>meses_en_curso <span class="op">=</span> <span class="bu">sorted</span>(df_ft[df_ft[<span class="st">'anno'</span>] <span class="op">==</span> ultimo_anno][<span class="st">'mes'</span>].unique())</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>anno_para_comparar <span class="op">=</span> anno_completo <span class="op">-</span> <span class="dv">1</span>  <span class="co"># año anterior al completo disponible</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Verificar si hay datos del año anterior</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>annos_disponibles <span class="op">=</span> df_ft[<span class="st">'anno'</span>].unique()</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> anno_para_comparar <span class="kw">not</span> <span class="kw">in</span> annos_disponibles:</span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"No hay datos de </span><span class="sc">{</span>anno_para_comparar<span class="sc">}</span><span class="ss"> en la base."</span>)</span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"El comparativo estará disponible cuando cargues los datos de </span><span class="sc">{</span>anno_para_comparar<span class="sc">}</span><span class="ss">."</span>)</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"Años disponibles: </span><span class="sc">{</span><span class="bu">sorted</span>(annos_disponibles)<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>    ind_actual   <span class="op">=</span> indicadores(filtrar(df_ft, anno<span class="op">=</span>ultimo_anno,        mes<span class="op">=</span>meses_en_curso), <span class="st">'mes'</span>)</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>    ind_anterior <span class="op">=</span> indicadores(filtrar(df_ft, anno<span class="op">=</span>anno_para_comparar, mes<span class="op">=</span>meses_en_curso), <span class="st">'mes'</span>)</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>    comp <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f'TD_</span><span class="sc">{</span>anno_para_comparar<span class="sc">}</span><span class="ss">'</span>: ind_anterior[<span class="st">'TD'</span>],</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f'TD_</span><span class="sc">{</span>ultimo_anno<span class="sc">}</span><span class="ss">'</span>:        ind_actual[<span class="st">'TD'</span>],</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>        <span class="st">'var_pp'</span>: (ind_actual[<span class="st">'TD'</span>] <span class="op">-</span> ind_anterior[<span class="st">'TD'</span>]).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>    })</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>    comp.index <span class="op">=</span> comp.index.<span class="bu">map</span>(MESES_NOMBRES)</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-26"><a href="#cb15-26" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Comparativo interanual — </span><span class="sc">{</span>anno_para_comparar<span class="sc">}</span><span class="ss"> vs </span><span class="sc">{</span>ultimo_anno<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb15-27"><a href="#cb15-27" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Meses comparables: </span><span class="sc">{</span>[MESES_NOMBRES[m] <span class="cf">for</span> m <span class="kw">in</span> meses_en_curso]<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb15-28"><a href="#cb15-28" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(comp.to_string())</span>
+<span id="cb15-29"><a href="#cb15-29" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-30"><a href="#cb15-30" aria-hidden="true" tabindex="-1"></a>    var_media <span class="op">=</span> comp[<span class="st">'var_pp'</span>].mean().<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb15-31"><a href="#cb15-31" aria-hidden="true" tabindex="-1"></a>    signo <span class="op">=</span> <span class="st">"+"</span> <span class="cf">if</span> var_media <span class="op">&gt;</span> <span class="dv">0</span> <span class="cf">else</span> <span class="st">""</span></span>
+<span id="cb15-32"><a href="#cb15-32" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Variacion promedio: </span><span class="sc">{</span>signo<span class="sc">}{</span>var_media<span class="sc">}</span><span class="ss"> pp'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>No hay datos de 2023 en la base.
+El comparativo estará disponible cuando cargues los datos de 2023.
+Años disponibles: [np.int64(2024), np.int64(2025)]</code></pre>
+</div>
+</div>
+<div id="d17b86ac" class="cell" data-execution_count="28">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 9. RANKING DEPARTAMENTAL</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>ind_rank <span class="op">=</span> indicadores(filtrar(df_ft, anno<span class="op">=</span>anno_completo), <span class="st">'dpto'</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>ind_rank.index <span class="op">=</span> ind_rank.index.<span class="bu">map</span>(NOMBRES_DPTOS)</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>ind_rank <span class="op">=</span> ind_rank.sort_values(<span class="st">'TD'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Ranking departamental por TD — </span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ind_rank[[<span class="st">'TD'</span>,<span class="st">'TO'</span>,<span class="st">'TGP'</span>]].to_string())</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="ch">\n</span><span class="ss">Posición región Caribe en el ranking:'</span>)</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> dpto_cod <span class="kw">in</span> DPTOS_CARIBE:</span>
+<span id="cb17-14"><a href="#cb17-14" aria-hidden="true" tabindex="-1"></a>    nombre <span class="op">=</span> NOMBRES_DPTOS.get(dpto_cod, dpto_cod)</span>
+<span id="cb17-15"><a href="#cb17-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> nombre <span class="kw">in</span> ind_rank.index:</span>
+<span id="cb17-16"><a href="#cb17-16" aria-hidden="true" tabindex="-1"></a>        pos <span class="op">=</span> <span class="bu">list</span>(ind_rank.index).index(nombre) <span class="op">+</span> <span class="dv">1</span></span>
+<span id="cb17-17"><a href="#cb17-17" aria-hidden="true" tabindex="-1"></a>        td  <span class="op">=</span> ind_rank.loc[nombre, <span class="st">'TD'</span>]</span>
+<span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f'  </span><span class="sc">{</span>nombre<span class="sc">:&lt;20}</span><span class="ss"> Puesto </span><span class="sc">{</span>pos<span class="sc">:&gt;2}</span><span class="ss">/33   TD: </span><span class="sc">{</span>td<span class="sc">}</span><span class="ss">%'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Ranking departamental por TD — 2024
+                   TD    TO   TGP
+dpto                             
+Chocó            27.1  34.5  47.3
+Guainía          21.1  53.1  67.3
+Amazonas         20.2  57.5  72.1
+Sucre            20.0  45.5  56.8
+Cesar            18.9  48.8  60.2
+Magdalena        18.6  50.2  61.7
+Bolívar          18.5  51.3  62.9
+La Guajira       18.4  51.3  62.9
+Putumayo         18.1  61.2  74.8
+Atlántico        17.8  53.7  65.3
+Boyacá           17.7  49.0  59.5
+Córdoba          17.5  47.2  57.2
+Vaupés           17.1  53.2  64.2
+N. Santander     15.5  49.0  57.9
+Valle del Cauca  14.8  53.7  63.0
+Tolima           14.8  51.4  60.3
+Huila            14.5  56.1  65.6
+Cauca            14.3  51.9  60.5
+Meta             13.8  55.7  64.6
+Caquetá          13.6  53.2  61.6
+Arauca           13.5  60.6  70.1
+Antioquia        13.4  53.8  62.1
+Quindío          13.2  51.9  59.8
+Santander        13.2  55.3  63.7
+Nariño           13.1  53.0  61.1
+Casanare         13.0  66.5  76.4
+Bogotá           12.9  60.6  69.6
+Vichada          12.8  65.9  75.6
+Caldas           12.7  49.5  56.7
+Cundinamarca     12.3  58.5  66.7
+Risaralda        12.2  55.0  62.6
+Guaviare         11.2  63.2  71.1
+San Andrés        8.9  69.0  75.8
+
+Posición región Caribe en el ranking:
+  Atlántico            Puesto 10/33   TD: 17.8%
+  Bolívar              Puesto  7/33   TD: 18.5%
+  Cesar                Puesto  5/33   TD: 18.9%
+  Córdoba              Puesto 12/33   TD: 17.5%
+  La Guajira           Puesto  8/33   TD: 18.4%
+  Magdalena            Puesto  6/33   TD: 18.6%
+  Sucre                Puesto  4/33   TD: 20.0%</code></pre>
+</div>
+</div>
+<div id="df2a9aa6" class="cell" data-execution_count="31">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 10. REGIÓN CARIBE — ANÁLISIS COMPLETO</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Año corrido por departamento</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>ind_caribe <span class="op">=</span> indicadores(filtrar(df_ft, anno<span class="op">=</span>anno_completo, dptos<span class="op">=</span>DPTOS_CARIBE), <span class="st">'dpto'</span>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>ind_caribe.index <span class="op">=</span> ind_caribe.index.<span class="bu">map</span>(NOMBRES_DPTOS)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>ind_caribe <span class="op">=</span> ind_caribe.sort_values(<span class="st">'TD'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Región Caribe — año corrido </span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ind_caribe[[<span class="st">'TD'</span>,<span class="st">'TO'</span>,<span class="st">'TGP'</span>]].to_string())</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Bolívar mes a mes</span></span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>ind_bolivar <span class="op">=</span> indicadores(filtrar(df_ft, anno<span class="op">=</span>anno_completo, dptos<span class="op">=</span>[<span class="st">'13'</span>]), <span class="st">'mes'</span>)</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>ind_bolivar.index <span class="op">=</span> ind_bolivar.index.<span class="bu">map</span>(MESES_NOMBRES)</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="ch">\n</span><span class="ss">Bolívar — mes a mes </span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ind_bolivar[[<span class="st">'TD'</span>,<span class="st">'TO'</span>,<span class="st">'TGP'</span>]].to_string())</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Comparativo interanual Caribe — solo si hay datos del año anterior</span></span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>anno_caribe_ant <span class="op">=</span> anno_completo <span class="op">-</span> <span class="dv">1</span></span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>annos_disponibles <span class="op">=</span> df_ft[<span class="st">'anno'</span>].unique()</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> anno_caribe_ant <span class="kw">not</span> <span class="kw">in</span> annos_disponibles:</span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="ch">\n</span><span class="ss">Comparativo interanual no disponible.'</span>)</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Carga datos de </span><span class="sc">{</span>anno_caribe_ant<span class="sc">}</span><span class="ss"> para activar esta sección.'</span>)</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>    ind_caribe_ant <span class="op">=</span> indicadores(filtrar(df_ft, anno<span class="op">=</span>anno_caribe_ant, dptos<span class="op">=</span>DPTOS_CARIBE), <span class="st">'dpto'</span>)</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>    ind_caribe_ant.index <span class="op">=</span> ind_caribe_ant.index.<span class="bu">map</span>(NOMBRES_DPTOS)</span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>    comp_caribe <span class="op">=</span> pd.DataFrame({</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f'TD_</span><span class="sc">{</span>anno_caribe_ant<span class="sc">}</span><span class="ss">'</span>: ind_caribe_ant[<span class="st">'TD'</span>],</span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>        <span class="ss">f'TD_</span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">'</span>:   ind_caribe[<span class="st">'TD'</span>],</span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>        <span class="st">'var_pp'</span>: (ind_caribe[<span class="st">'TD'</span>] <span class="op">-</span> ind_caribe_ant[<span class="st">'TD'</span>]).<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>    }).sort_values(<span class="ss">f'TD_</span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'</span><span class="ch">\n</span><span class="ss">Comparativo Caribe — </span><span class="sc">{</span>anno_caribe_ant<span class="sc">}</span><span class="ss"> vs </span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(comp_caribe.to_string())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Región Caribe — año corrido 2024
+              TD    TO   TGP
+dpto                        
+Sucre       20.0  45.5  56.8
+Cesar       18.9  48.8  60.2
+Magdalena   18.6  50.2  61.7
+Bolívar     18.5  51.3  62.9
+La Guajira  18.4  51.3  62.9
+Atlántico   17.8  53.7  65.3
+Córdoba     17.5  47.2  57.2
+
+Bolívar — mes a mes 2024
+       TD    TO   TGP
+mes                  
+Ene  15.4  56.1  66.3
+Feb  16.4  52.7  63.1
+Mar  19.8  51.0  63.5
+Abr  19.3  49.8  61.7
+May  18.4  50.8  62.2
+Jun  21.7  47.8  61.1
+Jul  20.0  48.6  60.7
+Ago  19.2  51.2  63.4
+Sep  19.9  51.2  63.9
+Oct  16.7  54.8  65.8
+Nov  19.6  50.1  62.3
+Dic  15.5  51.2  60.5
+
+Comparativo interanual no disponible.
+Carga datos de 2023 para activar esta sección.</code></pre>
+</div>
+</div>
+<div id="a1c06bee" class="cell" data-execution_count="32">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 11. SERIES DE TIEMPO Y TENDENCIA</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Serie completa nacional</span></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>ind_serie <span class="op">=</span> indicadores(df_ft, [<span class="st">'anno'</span>,<span class="st">'mes'</span>]).reset_index()</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>ind_serie[<span class="st">'periodo'</span>] <span class="op">=</span> pd.to_datetime(</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>    ind_serie[<span class="st">'anno'</span>].astype(<span class="bu">str</span>) <span class="op">+</span> <span class="st">'-'</span> <span class="op">+</span> ind_serie[<span class="st">'mes'</span>] <span class="op">+</span> <span class="st">'-01'</span></span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>ind_serie <span class="op">=</span> ind_serie.sort_values(<span class="st">'periodo'</span>)</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>ind_serie[<span class="st">'TD_mm3'</span>] <span class="op">=</span> ind_serie[<span class="st">'TD'</span>].rolling(<span class="dv">3</span>, center<span class="op">=</span><span class="va">True</span>).mean().<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Serie Bolívar completa</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>ind_bol_serie <span class="op">=</span> indicadores(filtrar(df_ft, dptos<span class="op">=</span>[<span class="st">'13'</span>]), [<span class="st">'anno'</span>,<span class="st">'mes'</span>]).reset_index()</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>ind_bol_serie[<span class="st">'periodo'</span>] <span class="op">=</span> pd.to_datetime(</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>    ind_bol_serie[<span class="st">'anno'</span>].astype(<span class="bu">str</span>) <span class="op">+</span> <span class="st">'-'</span> <span class="op">+</span> ind_bol_serie[<span class="st">'mes'</span>] <span class="op">+</span> <span class="st">'-01'</span></span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>ind_bol_serie <span class="op">=</span> ind_bol_serie.sort_values(<span class="st">'periodo'</span>)</span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>ind_bol_serie[<span class="st">'TD_mm3'</span>] <span class="op">=</span> ind_bol_serie[<span class="st">'TD'</span>].rolling(<span class="dv">3</span>, center<span class="op">=</span><span class="va">True</span>).mean().<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'Serie completa nacional:'</span>)</span>
+<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(ind_serie[[<span class="st">'periodo'</span>,<span class="st">'TD'</span>,<span class="st">'TD_mm3'</span>,<span class="st">'TO'</span>,<span class="st">'TGP'</span>]].to_string(index<span class="op">=</span><span class="va">False</span>))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Serie completa nacional:
+   periodo   TD  TD_mm3   TO  TGP
+2024-01-01 12.1     NaN 52.3 59.5
+2024-02-01 14.4    13.9 54.0 63.1
+2024-03-01 15.1    15.0 52.2 61.5
+2024-04-01 15.6    15.2 53.9 63.9
+2024-05-01 15.0    15.0 54.4 64.0
+2024-06-01 14.5    14.7 53.7 62.8
+2024-07-01 14.5    14.8 54.3 63.5
+2024-08-01 15.4    15.4 55.0 64.9
+2024-09-01 16.4    15.7 54.2 64.8
+2024-10-01 15.2    15.8 54.6 64.4
+2024-11-01 15.8    14.5 54.8 65.1
+2024-12-01 12.5    13.6 54.3 62.1
+2025-01-01 12.5     NaN 52.8 60.3</code></pre>
+</div>
+</div>
+<div id="59fba465" class="cell" data-execution_count="36">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 12. GRÁFICAS</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co"># ── G1: Serie completa nacional con tendencia ─────────────</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>fig1 <span class="op">=</span> go.Figure()</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>fig1.add_trace(go.Scatter(</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>ind_serie[<span class="st">'periodo'</span>], y<span class="op">=</span>ind_serie[<span class="st">'TD'</span>],</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>    mode<span class="op">=</span><span class="st">'lines'</span>, name<span class="op">=</span><span class="st">'TD mensual'</span>,</span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>    line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">'#B4B2A9'</span>, width<span class="op">=</span><span class="fl">1.5</span>), opacity<span class="op">=</span><span class="fl">0.7</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>fig1.add_trace(go.Scatter(</span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>ind_serie[<span class="st">'periodo'</span>], y<span class="op">=</span>ind_serie[<span class="st">'TD_mm3'</span>],</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    mode<span class="op">=</span><span class="st">'lines'</span>, name<span class="op">=</span><span class="st">'Tendencia (MM3)'</span>,</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>    line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">'#E8593C'</span>, width<span class="op">=</span><span class="fl">2.5</span>)</span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>fig1.update_layout(</span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">'Tasa de desocupación nacional — serie completa'</span>,</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">''</span>, yaxis_title<span class="op">=</span><span class="st">'TD (%)'</span>,</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>    template<span class="op">=</span><span class="st">'plotly_white'</span>, height<span class="op">=</span><span class="dv">400</span>,</span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>    legend<span class="op">=</span><span class="bu">dict</span>(orientation<span class="op">=</span><span class="st">'h'</span>, yanchor<span class="op">=</span><span class="st">'bottom'</span>, y<span class="op">=</span><span class="fl">1.02</span>)</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>fig1.show()</span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a><span class="co"># ── G2: Bolívar mes a mes con referencia nacional ─────────</span></span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>td_ref <span class="op">=</span> ind_nac[<span class="st">'TD'</span>].mean().<span class="bu">round</span>(<span class="dv">1</span>)</span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>fig2 <span class="op">=</span> go.Figure()</span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a>fig2.add_trace(go.Scatter(</span>
+<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>ind_bolivar.index, y<span class="op">=</span>ind_bolivar[<span class="st">'TD'</span>],</span>
+<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a>    mode<span class="op">=</span><span class="st">'lines+markers'</span>, name<span class="op">=</span><span class="st">'TD Bolívar'</span>,</span>
+<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a>    line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">'#E8593C'</span>, width<span class="op">=</span><span class="fl">2.5</span>), marker<span class="op">=</span><span class="bu">dict</span>(size<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a>fig2.add_trace(go.Scatter(</span>
+<span id="cb23-34"><a href="#cb23-34" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>ind_bolivar.index, y<span class="op">=</span>ind_bolivar[<span class="st">'TO'</span>],</span>
+<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a>    mode<span class="op">=</span><span class="st">'lines+markers'</span>, name<span class="op">=</span><span class="st">'TO Bolívar'</span>,</span>
+<span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a>    line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">'#1D9E75'</span>, width<span class="op">=</span><span class="fl">2.5</span>), marker<span class="op">=</span><span class="bu">dict</span>(size<span class="op">=</span><span class="dv">8</span>)</span>
+<span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a>fig2.add_hline(</span>
+<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a>    y<span class="op">=</span>td_ref, line_dash<span class="op">=</span><span class="st">'dash'</span>, line_color<span class="op">=</span><span class="st">'gray'</span>,</span>
+<span id="cb23-40"><a href="#cb23-40" aria-hidden="true" tabindex="-1"></a>    annotation_text<span class="op">=</span><span class="ss">f'TD promedio nacional </span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss"> (</span><span class="sc">{</span>td_ref<span class="sc">}</span><span class="ss">%)'</span>,</span>
+<span id="cb23-41"><a href="#cb23-41" aria-hidden="true" tabindex="-1"></a>    annotation_position<span class="op">=</span><span class="st">'bottom right'</span></span>
+<span id="cb23-42"><a href="#cb23-42" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-43"><a href="#cb23-43" aria-hidden="true" tabindex="-1"></a>fig2.update_layout(</span>
+<span id="cb23-44"><a href="#cb23-44" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="ss">f'Mercado laboral — Bolívar </span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">'</span>,</span>
+<span id="cb23-45"><a href="#cb23-45" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">'Mes'</span>, yaxis_title<span class="op">=</span><span class="st">'Tasa (%)'</span>,</span>
+<span id="cb23-46"><a href="#cb23-46" aria-hidden="true" tabindex="-1"></a>    template<span class="op">=</span><span class="st">'plotly_white'</span>, height<span class="op">=</span><span class="dv">450</span>,</span>
+<span id="cb23-47"><a href="#cb23-47" aria-hidden="true" tabindex="-1"></a>    legend<span class="op">=</span><span class="bu">dict</span>(orientation<span class="op">=</span><span class="st">'h'</span>, yanchor<span class="op">=</span><span class="st">'bottom'</span>, y<span class="op">=</span><span class="fl">1.02</span>)</span>
+<span id="cb23-48"><a href="#cb23-48" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-49"><a href="#cb23-49" aria-hidden="true" tabindex="-1"></a>fig2.show()</span>
+<span id="cb23-50"><a href="#cb23-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-51"><a href="#cb23-51" aria-hidden="true" tabindex="-1"></a><span class="co"># ── G3: Ranking Caribe ────────────────────────────────────</span></span>
+<span id="cb23-52"><a href="#cb23-52" aria-hidden="true" tabindex="-1"></a>colores <span class="op">=</span> [<span class="st">'#E8593C'</span> <span class="cf">if</span> d <span class="op">==</span> <span class="st">'Bolívar'</span> <span class="cf">else</span> <span class="st">'#9FE1CB'</span> <span class="cf">for</span> d <span class="kw">in</span> ind_caribe.index]</span>
+<span id="cb23-53"><a href="#cb23-53" aria-hidden="true" tabindex="-1"></a>fig3 <span class="op">=</span> go.Figure(go.Bar(</span>
+<span id="cb23-54"><a href="#cb23-54" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>ind_caribe[<span class="st">'TD'</span>], y<span class="op">=</span>ind_caribe.index, orientation<span class="op">=</span><span class="st">'h'</span>,</span>
+<span id="cb23-55"><a href="#cb23-55" aria-hidden="true" tabindex="-1"></a>    marker_color<span class="op">=</span>colores,</span>
+<span id="cb23-56"><a href="#cb23-56" aria-hidden="true" tabindex="-1"></a>    text<span class="op">=</span>ind_caribe[<span class="st">'TD'</span>].astype(<span class="bu">str</span>)<span class="op">+</span><span class="st">'%'</span>, textposition<span class="op">=</span><span class="st">'outside'</span></span>
+<span id="cb23-57"><a href="#cb23-57" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb23-58"><a href="#cb23-58" aria-hidden="true" tabindex="-1"></a>fig3.update_layout(</span>
+<span id="cb23-59"><a href="#cb23-59" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="ss">f'TD región Caribe — </span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">'</span>,</span>
+<span id="cb23-60"><a href="#cb23-60" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">'TD (%)'</span>, template<span class="op">=</span><span class="st">'plotly_white'</span>, height<span class="op">=</span><span class="dv">400</span>,</span>
+<span id="cb23-61"><a href="#cb23-61" aria-hidden="true" tabindex="-1"></a>    yaxis<span class="op">=</span>{<span class="st">'categoryorder'</span>:<span class="st">'total ascending'</span>}</span>
+<span id="cb23-62"><a href="#cb23-62" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-63"><a href="#cb23-63" aria-hidden="true" tabindex="-1"></a>fig3.show()</span>
+<span id="cb23-64"><a href="#cb23-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-65"><a href="#cb23-65" aria-hidden="true" tabindex="-1"></a><span class="co"># ── G4: Comparativo interanual Caribe ─────────────────────</span></span>
+<span id="cb23-66"><a href="#cb23-66" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="st">'comp_caribe'</span> <span class="kw">in</span> <span class="bu">dir</span>() <span class="kw">and</span> <span class="ss">f'TD_</span><span class="sc">{</span>anno_caribe_ant<span class="sc">}</span><span class="ss">'</span> <span class="kw">in</span> comp_caribe.columns:</span>
+<span id="cb23-67"><a href="#cb23-67" aria-hidden="true" tabindex="-1"></a>    fig4 <span class="op">=</span> go.Figure()</span>
+<span id="cb23-68"><a href="#cb23-68" aria-hidden="true" tabindex="-1"></a>    fig4.add_trace(go.Bar(</span>
+<span id="cb23-69"><a href="#cb23-69" aria-hidden="true" tabindex="-1"></a>        name<span class="op">=</span><span class="bu">str</span>(anno_caribe_ant),</span>
+<span id="cb23-70"><a href="#cb23-70" aria-hidden="true" tabindex="-1"></a>        x<span class="op">=</span>comp_caribe.index,</span>
+<span id="cb23-71"><a href="#cb23-71" aria-hidden="true" tabindex="-1"></a>        y<span class="op">=</span>comp_caribe[<span class="ss">f'TD_</span><span class="sc">{</span>anno_caribe_ant<span class="sc">}</span><span class="ss">'</span>],</span>
+<span id="cb23-72"><a href="#cb23-72" aria-hidden="true" tabindex="-1"></a>        marker_color<span class="op">=</span><span class="st">'#B4B2A9'</span></span>
+<span id="cb23-73"><a href="#cb23-73" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb23-74"><a href="#cb23-74" aria-hidden="true" tabindex="-1"></a>    fig4.add_trace(go.Bar(</span>
+<span id="cb23-75"><a href="#cb23-75" aria-hidden="true" tabindex="-1"></a>        name<span class="op">=</span><span class="bu">str</span>(anno_completo),</span>
+<span id="cb23-76"><a href="#cb23-76" aria-hidden="true" tabindex="-1"></a>        x<span class="op">=</span>comp_caribe.index,</span>
+<span id="cb23-77"><a href="#cb23-77" aria-hidden="true" tabindex="-1"></a>        y<span class="op">=</span>comp_caribe[<span class="ss">f'TD_</span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">'</span>],</span>
+<span id="cb23-78"><a href="#cb23-78" aria-hidden="true" tabindex="-1"></a>        marker_color<span class="op">=</span><span class="st">'#E8593C'</span></span>
+<span id="cb23-79"><a href="#cb23-79" aria-hidden="true" tabindex="-1"></a>    ))</span>
+<span id="cb23-80"><a href="#cb23-80" aria-hidden="true" tabindex="-1"></a>    fig4.update_layout(</span>
+<span id="cb23-81"><a href="#cb23-81" aria-hidden="true" tabindex="-1"></a>        title<span class="op">=</span><span class="st">'Comparativo interanual — región Caribe'</span>,</span>
+<span id="cb23-82"><a href="#cb23-82" aria-hidden="true" tabindex="-1"></a>        barmode<span class="op">=</span><span class="st">'group'</span>, yaxis_title<span class="op">=</span><span class="st">'TD (%)'</span>,</span>
+<span id="cb23-83"><a href="#cb23-83" aria-hidden="true" tabindex="-1"></a>        template<span class="op">=</span><span class="st">'plotly_white'</span>, height<span class="op">=</span><span class="dv">400</span>,</span>
+<span id="cb23-84"><a href="#cb23-84" aria-hidden="true" tabindex="-1"></a>        legend<span class="op">=</span><span class="bu">dict</span>(orientation<span class="op">=</span><span class="st">'h'</span>, yanchor<span class="op">=</span><span class="st">'bottom'</span>, y<span class="op">=</span><span class="fl">1.02</span>)</span>
+<span id="cb23-85"><a href="#cb23-85" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb23-86"><a href="#cb23-86" aria-hidden="true" tabindex="-1"></a>    fig4.show()</span>
+<span id="cb23-87"><a href="#cb23-87" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb23-88"><a href="#cb23-88" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'G4 no disponible — carga datos de </span><span class="sc">{</span>anno_completo <span class="op">-</span> <span class="dv">1</span><span class="sc">}</span><span class="ss"> para activar.'</span>)</span>
+<span id="cb23-89"><a href="#cb23-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-90"><a href="#cb23-90" aria-hidden="true" tabindex="-1"></a><span class="co"># ── G5: Brecha de género por mes ──────────────────────────</span></span>
+<span id="cb23-91"><a href="#cb23-91" aria-hidden="true" tabindex="-1"></a>fig5 <span class="op">=</span> go.Figure()</span>
+<span id="cb23-92"><a href="#cb23-92" aria-hidden="true" tabindex="-1"></a>fig5.add_trace(go.Scatter(</span>
+<span id="cb23-93"><a href="#cb23-93" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>td_g.index, y<span class="op">=</span>td_g[<span class="st">'Hombre'</span>],</span>
+<span id="cb23-94"><a href="#cb23-94" aria-hidden="true" tabindex="-1"></a>    mode<span class="op">=</span><span class="st">'lines+markers'</span>, name<span class="op">=</span><span class="st">'Hombre'</span>,</span>
+<span id="cb23-95"><a href="#cb23-95" aria-hidden="true" tabindex="-1"></a>    line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">'#185FA5'</span>, width<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb23-96"><a href="#cb23-96" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb23-97"><a href="#cb23-97" aria-hidden="true" tabindex="-1"></a>fig5.add_trace(go.Scatter(</span>
+<span id="cb23-98"><a href="#cb23-98" aria-hidden="true" tabindex="-1"></a>    x<span class="op">=</span>td_g.index, y<span class="op">=</span>td_g[<span class="st">'Mujer'</span>],</span>
+<span id="cb23-99"><a href="#cb23-99" aria-hidden="true" tabindex="-1"></a>    mode<span class="op">=</span><span class="st">'lines+markers'</span>, name<span class="op">=</span><span class="st">'Mujer'</span>,</span>
+<span id="cb23-100"><a href="#cb23-100" aria-hidden="true" tabindex="-1"></a>    line<span class="op">=</span><span class="bu">dict</span>(color<span class="op">=</span><span class="st">'#D85A30'</span>, width<span class="op">=</span><span class="dv">2</span>)</span>
+<span id="cb23-101"><a href="#cb23-101" aria-hidden="true" tabindex="-1"></a>))</span>
+<span id="cb23-102"><a href="#cb23-102" aria-hidden="true" tabindex="-1"></a>fig5.update_layout(</span>
+<span id="cb23-103"><a href="#cb23-103" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="ss">f'Brecha de género en TD — </span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">'</span>,</span>
+<span id="cb23-104"><a href="#cb23-104" aria-hidden="true" tabindex="-1"></a>    xaxis_title<span class="op">=</span><span class="st">'Mes'</span>, yaxis_title<span class="op">=</span><span class="st">'TD (%)'</span>,</span>
+<span id="cb23-105"><a href="#cb23-105" aria-hidden="true" tabindex="-1"></a>    template<span class="op">=</span><span class="st">'plotly_white'</span>, height<span class="op">=</span><span class="dv">400</span>,</span>
+<span id="cb23-106"><a href="#cb23-106" aria-hidden="true" tabindex="-1"></a>    legend<span class="op">=</span><span class="bu">dict</span>(orientation<span class="op">=</span><span class="st">'h'</span>, yanchor<span class="op">=</span><span class="st">'bottom'</span>, y<span class="op">=</span><span class="fl">1.02</span>)</span>
+<span id="cb23-107"><a href="#cb23-107" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb23-108"><a href="#cb23-108" aria-hidden="true" tabindex="-1"></a>fig5.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="01_analisis_mercado_laboral_files/figure-html/cell-13-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="01_analisis_mercado_laboral_files/figure-html/cell-13-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="01_analisis_mercado_laboral_files/figure-html/cell-13-output-3.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>G4 no disponible — carga datos de 2023 para activar.</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="01_analisis_mercado_laboral_files/figure-html/cell-13-output-5.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<div id="65cd04ec" class="cell" data-execution_count="37">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 13. GUARDAR RESULTADOS</span></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="co"># ═══════════════════════════════════════════════════════════</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>os.makedirs(<span class="st">'datos/processed'</span>, exist_ok<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a>archivos <span class="op">=</span> {</span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'indicadores_nacionales_</span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">.csv'</span>:  ind_nac[[<span class="st">'TD'</span>,<span class="st">'TO'</span>,<span class="st">'TGP'</span>]],</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'indicadores_caribe_</span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">.csv'</span>:      ind_caribe[[<span class="st">'TD'</span>,<span class="st">'TO'</span>,<span class="st">'TGP'</span>]],</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'indicadores_bolivar_</span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">.csv'</span>:     ind_bolivar[[<span class="st">'TD'</span>,<span class="st">'TO'</span>,<span class="st">'TGP'</span>]],</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'ranking_departamental_</span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">.csv'</span>:   ind_rank[[<span class="st">'TD'</span>,<span class="st">'TO'</span>,<span class="st">'TGP'</span>]],</span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'brecha_genero_</span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">.csv'</span>:           td_g,</span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'informalidad_caribe_</span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">.csv'</span>:     tasa_inf_caribe.to_frame(<span class="st">'Informalidad'</span>),</span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'comparativo_interanual_caribe.csv'</span>:           comp_caribe,</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>    <span class="ss">f'serie_completa_nacional.csv'</span>:                 ind_serie[[<span class="st">'periodo'</span>,<span class="st">'TD'</span>,<span class="st">'TD_mm3'</span>,<span class="st">'TO'</span>,<span class="st">'TGP'</span>]],</span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> nombre, df_g <span class="kw">in</span> archivos.items():</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>    df_g.to_csv(<span class="ss">f'datos/processed/</span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss">'</span>, encoding<span class="op">=</span><span class="st">'utf-8'</span>)</span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f'Guardado: </span><span class="sc">{</span>nombre<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'</span><span class="ch">\n</span><span class="ss">Análisis completado.'</span>)</span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Período cubierto: </span><span class="sc">{</span>ind_serie[<span class="st">"periodo"</span>]<span class="sc">.</span><span class="bu">min</span>()<span class="sc">.</span>strftime(<span class="st">"%b %Y"</span>)<span class="sc">}</span><span class="ss"> → </span><span class="sc">{</span>ind_serie[<span class="st">"periodo"</span>]<span class="sc">.</span><span class="bu">max</span>()<span class="sc">.</span>strftime(<span class="st">"%b %Y"</span>)<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Año corrido completo analizado: </span><span class="sc">{</span>anno_completo<span class="sc">}</span><span class="ss">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Guardado: indicadores_nacionales_2024.csv
+Guardado: indicadores_caribe_2024.csv
+Guardado: indicadores_bolivar_2024.csv
+Guardado: ranking_departamental_2024.csv
+Guardado: brecha_genero_2024.csv
+Guardado: informalidad_caribe_2024.csv
+Guardado: comparativo_interanual_caribe.csv
+Guardado: serie_completa_nacional.csv
+
+Análisis completado.
+Período cubierto: Jan 2024 → Jan 2025
+Año corrido completo analizado: 2024</code></pre>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+        for (let i=0; i<detailsSrc.length; i++) {
+          const details = detailsSrc[i].parentElement;
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

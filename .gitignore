@@ -1,2 +1,5 @@
-config/.env 
-.ipynb_checkpoints/ 
+config/.env
+.ipynb_checkpoints/
+
+/.quarto/
+**/*.quarto_ipynb

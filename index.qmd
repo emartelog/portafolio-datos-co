@@ -1,0 +1,39 @@
+---
+title: "Portafolio de Ciencia de Datos"
+subtitle: "Análisis estadísticos con fuentes oficiales colombianas"
+author: "Efrain Martelo"
+date: today
+---
+
+## Bienvenido
+
+Este portafolio presenta análisis cuantitativos sobre temas económicos 
+y sociales de Colombia, elaborados a partir de microdatos de fuentes 
+oficiales como el DANE, XM y la Policía Nacional.
+
+Los análisis son reproducibles, automatizados y se actualizan 
+mensualmente a medida que las fuentes publican nuevos datos.
+
+## Análisis disponibles
+
+### Mercado laboral — GEIH 2024
+Indicadores de ocupación, desempleo, informalidad y brechas 
+socioeconómicas para Colombia y la región Caribe, calculados 
+desde los microdatos de la Gran Encuesta Integrada de Hogares.
+
+[Ver análisis →](analisis/mercado_laboral.qmd)
+
+## Fuentes de datos
+
+| Fuente | Descripción | Estado |
+|--------|-------------|--------|
+| DANE — GEIH | Mercado laboral mensual | ✅ Activo |
+| XM | Mercado eléctrico | 🔜 Próximamente |
+| Policía Nacional | Estadísticas delictivas | 🔜 Próximamente |
+
+## Metodología
+
+- **Lenguaje:** Python 3.12
+- **Base de datos:** PostgreSQL
+- **Visualización:** Plotly
+- **Fuente:** Microdatos públicos DANE

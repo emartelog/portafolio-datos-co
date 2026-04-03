@@ -1,0 +1,109 @@
+---
+title: "Mercado laboral — Colombia 2024"
+subtitle: "Análisis desde microdatos GEIH"
+author: "Efrain Martelo"
+date: today
+format:
+  html:
+    code-fold: true
+jupyter: portafolio
+---
+
+## Resumen
+
+Análisis del mercado laboral colombiano con énfasis en la región 
+Caribe y el departamento de Bolívar, elaborado desde los microdatos 
+públicos de la GEIH 2024 del DANE.
+
+## Conexión y carga de datos
+```{python}
+import pandas as pd
+import numpy as np
+import plotly.graph_objects as go
+from sqlalchemy import create_engine, text
+from dotenv import load_dotenv
+import os, warnings
+warnings.filterwarnings('ignore')
+
+load_dotenv('../config/.env')
+engine = create_engine(
+    f"postgresql+psycopg2://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}"
+    f"@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_NAME')}"
+)
+
+with engine.connect() as conn:
+    n = conn.execute(text('SELECT COUNT(*) FROM "FUERZA_DE_TRABAJO_GEIH"')).fetchone()[0]
+    print(f'Registros disponibles: {n:,}')
+```
+
+## Indicadores nacionales 2024
+```{python}
+df_nac = pd.read_csv('../datos/processed/indicadores_nacionales_2024.csv', index_col=0)
+print(df_nac[['TD','TO','TGP']].to_string())
+```
+
+## Región Caribe
+```{python}
+df_caribe = pd.read_csv('../datos/processed/indicadores_caribe_2024.csv', index_col=0)
+
+fig = go.Figure(go.Bar(
+    x=df_caribe['TD'],
+    y=df_caribe.index,
+    orientation='h',
+    marker_color=['#E8593C' if d == 'Bolívar' else '#9FE1CB' 
+                  for d in df_caribe.index],
+    text=df_caribe['TD'].astype(str)+'%',
+    textposition='outside'
+))
+fig.update_layout(
+    title='Tasa de desocupación — Región Caribe 2024',
+    xaxis_title='TD (%)',
+    template='plotly_white',
+    height=400,
+    yaxis={'categoryorder':'total ascending'}
+)
+fig.show()
+```
+
+## Brecha de género
+```{python}
+df_genero = pd.read_csv('../datos/processed/brecha_genero_2024.csv', index_col=0)
+df_genero = df_genero.dropna()
+
+fig2 = go.Figure()
+fig2.add_trace(go.Scatter(
+    x=df_genero.index, y=df_genero['Hombre'],
+    mode='lines+markers', name='Hombre',
+    line=dict(color='#185FA5', width=2)
+))
+fig2.add_trace(go.Scatter(
+    x=df_genero.index, y=df_genero['Mujer'],
+    mode='lines+markers', name='Mujer',
+    line=dict(color='#D85A30', width=2)
+))
+fig2.update_layout(
+    title='Brecha de género en TD — Nacional 2024',
+    yaxis_title='TD (%)',
+    template='plotly_white',
+    height=400
+)
+fig2.show()
+```
+
+## Informalidad región Caribe
+```{python}
+df_inf = pd.read_csv('../datos/processed/informalidad_caribe_2024.csv', index_col=0)
+df_inf.columns = ['Informalidad (%)']
+df_inf = df_inf.sort_values('Informalidad (%)', ascending=False)
+print(df_inf.to_string())
+```
+
+## Nota metodológica
+
+Los indicadores se calcularon desde microdatos públicos GEIH 2024 
+usando el factor de expansión FEX_C18. Las cifras pueden diferir 
+de los boletines oficiales del DANE por ajustes de calibración 
+post-estratificación internos.
+
+**Fuente:** DANE — GEIH 2024, microdatos públicos.  
+**Procesamiento:** Python + PostgreSQL. Cálculo propio.

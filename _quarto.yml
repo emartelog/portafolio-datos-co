@@ -1,0 +1,31 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Portafolio — Ciencia de Datos Colombia"
+  description: "Análisis estadísticos de fuentes oficiales colombianas"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Inicio
+      - href: analisis/mercado_laboral.qmd
+        text: Mercado Laboral
+    right:
+      - icon: github
+        href: https://github.com/emartelog/portafolio-datos-co
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    toc-depth: 3
+    code-fold: true
+    code-tools: true
+    fig-width: 10
+    fig-height: 6
+
+execute:
+  freeze: true
+  echo: true
+  warning: false
